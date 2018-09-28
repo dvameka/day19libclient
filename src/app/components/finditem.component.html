@@ -1,0 +1,12 @@
+
+<form #myForm="ngForm" (ngSubmit)="searchItem(myForm)">
+
+    <div class="container" fxLayout="column">
+        <div class="item1" fxFlex=99%><mat-form-field><input matInput name="brand" placeholder="Brand" ngModel required></mat-form-field></div>
+     <div class="container" fxLayout="row">
+        <div class="item6" fxFlex=50%><mat-form-field><input matInput name="pdname" placeholder="Name" ngModel required></mat-form-field></div>
+          <button type="submit" mat-raised-button color=accent [disabled]="myForm.invalid">Search</button>
+      </div>
+    </div>
+    
+    </form>
