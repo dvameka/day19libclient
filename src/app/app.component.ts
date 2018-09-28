@@ -1,36 +1,27 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core';
 
-/*
-export interface itemList {
-  id: number;
-  brand: string;
-  name: string;
-}
-*/
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'day8 Grocer Client';
-  itemResult: string[];
+  title = 'booklibrary';
+  searchResult: string[];
 
-  // myItemList: itemList[];
 
   @Input()
-  item: any;
+  getItem: any;
 
 
   @Output()
 
-  propagateList(item: any) {
-    console.log ('>>> Items Found: ', item);
+  BookList(getItem: any) {
+    console.log ('>>> search Found: ', getItem);
 
-    this.itemResult = Object.values(item);
+    this.searchResult = Object.values(getItem);
 
-    console.log('>> this.itemResult<< ', this.itemResult);
+    console.log('>> this.itemResult >> ', this.searchResult);
 
     }
 

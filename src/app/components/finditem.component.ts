@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import {GrocerDBService} from '../services/grocerDB.service';
+import {BooklibDBService} from '../services/booklibDB.service';
 
 
 @Component({
@@ -11,29 +11,38 @@ import {GrocerDBService} from '../services/grocerDB.service';
 export class FinditemComponent implements OnInit {
 
   item = {};
+/*  bkvalue: bklimit[] = [
+    {value: '5', viewValue: '5 records'},
+    {value: '10', viewValue: '10 records'},
+    {value: '15', viewValue: '15 records'}
+  ];
+}
+*/
 
   @Output()
-  // albumAdded = new EventEmitter<string>();
-  itemList = new EventEmitter();
 
-  constructor(private grocerdbsvc: GrocerDBService) { }
+  bookItems = new EventEmitter();
+
+  constructor(private booklibdbsvc: BooklibDBService) { }
 
   ngOnInit() {
 
   }
 
   searchItem(form: NgForm) {
-    const brand = '%' + form.value.brand + '%';
-    const pdname = '%' + form.value.pdname + '%';
+    const bktitle = '%' + form.value.bktitle + '%';
+    const authname = '%' + form.value.authname + '%';
+    const pglimit = form.value.pglimit;
 
-    this.grocerdbsvc.getItem('0', '50', brand, pdname)
+    console.log('PGlimit >>>>>', pglimit);
+
+    this.booklibdbsvc.getItem('0', pglimit, bktitle, authname)
     .then((results) => {
       this.item = results;
     });
 
-    console.log('>>>>>', brand);
 
-    this.itemList.emit(this.item);
+    this.bookItems.emit(this.item);
 
     console.log('*Loggin this  ', this.item);
   }

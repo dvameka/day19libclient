@@ -1,8 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<mat-toolbar color="primary">
-  Welcome to the Sunshine Grocery
+<mat-toolbar color="accent">
+  Find Grendale's Library Resources
 </mat-toolbar>
 
-<app-finditem (itemList)="propagateList($event)"></app-finditem>
-<app-listitem [passResult]="itemResult"></app-listitem>
+<app-finditem (bookItems)="BookList($event)"></app-finditem>
+<app-listitem [passResult]="SearchResult"></app-listitem>
 

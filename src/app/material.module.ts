@@ -11,6 +11,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatMomentDateModule} from '@angular/material-moment-adapter';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -19,7 +20,7 @@ const MATERIAL = [MatButtonModule, MatIconModule,
                     MatRadioModule, MatFormFieldModule,
                     MatCardModule, MatToolbarModule,
                     MatDatepickerModule, MatMomentDateModule,
-                    MatSliderModule];
+                    MatSliderModule, MatSelectModule];
 
 @NgModule ({
     imports: MATERIAL,

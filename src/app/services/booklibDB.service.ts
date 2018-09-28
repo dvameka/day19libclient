@@ -7,20 +7,20 @@ import {take} from 'rxjs/operators';
   providedIn: 'root'
 })
 
-export class GrocerDBService {
+export class BooklibDBService {
 
   constructor(private http: HttpClient) { }
 
-  getItem(offset = '0', limit = '50', brand, pdname): Promise<any> {
+  getItem(offset = '0', pglimit = '', bktitle, authname): Promise<any> {
 
-    const qs = new HttpParams()
+    const bkresult = new HttpParams()
       .set('offset' , offset)
-      .set('limit' , limit)
-      .set('brand', brand)
-      .set('pdname', pdname); // looks fine here
+      .set('pglimit' , pglimit)
+      .set('bktitle', bktitle)
+      .set('authname', authname);
 
     return (
-      this.http.get('http://localhost:3000/grocery', {params: qs})
+      this.http.get('http://localhost:3000/booklist', {params: bkresult})
         .pipe(take(1)).toPromise()
     );
 

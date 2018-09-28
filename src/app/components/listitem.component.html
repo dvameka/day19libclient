@@ -1,24 +1,14 @@
 
 <div fxLayout="column">
 
-    <!--  <div *ngIf="albumList==0"><h3>Start Your Collection</h3></div>
-   -->  
-   
-   <!-- {{passResult}} -->
-  
-  <!--
-   <div *ngIf="film == 0">
-      <h3>Your search returns nothing</h3>
-    </div>
-  -->
 
-    <h1>Good Day!</h1>
+    <h1>Your Search Results</h1>
   
     <div class="container" fxLayout="row" fxLayoutAlign="start" *ngFor="let i of passResult">
       <mat-card>
-        <div fxFlex=30%>{{ i.brand }}</div>
-        <div fxFlex=50%>{{ i.pdname }}</div>
-        <div fxFlex=20%><form method="get" action="http://localhost:4200/grocery/{{i.id}}"><button>Edit</button></form></div>
+        <div fxFlex=30%>{{ i.bktitle }}</div>
+        <div fxFlex=50%>{{ i.authname }}</div>
+        <div fxFlex=20%><form method="get" action="http://localhost:4200/booklist/{{i.id}}"></form></div>
       </mat-card>
     </div>
   

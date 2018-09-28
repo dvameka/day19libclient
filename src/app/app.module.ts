@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FinditemComponent } from './components/finditem.component';
 import { ListitemComponent } from './components/listitem.component';
-import { GrocerDBService } from './services/grocerDB.service';
+import { BooklibDBService } from './services/booklibDB.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { GrocerDBService } from './services/grocerDB.service';
     CUSTOM_ELEMENTS_SCHEMA,
     NO_ERRORS_SCHEMA
   ],
-  providers: [GrocerDBService],
+  providers: [BooklibDBService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
